@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_064_all_2009080056_338a836209c54a7e.zip
-  ROM_NAME: OxygenOS
+  ROM_URL: https://ip1944232631.mobgslb.tbcache.com/anonymous%2Fd329f511-eab8-4e9a-9b08-f840f5d33392%2FPixelExperience_Plus_dipper-10.0-20200921-1356-OFFICIAL.zip?t-s=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJndWlkK3RpbWVzdGFtcCI6Imlsb3ZlY293dHJhbnNmZXIyMDIxXzE2MTEzMjM0Mjg5NjAifQ.hmcQkUctuwHIs5HodBl9TOQ2b9flFar-y66SUr1qf-g&attname=PixelExperience_Plus_dipper-10.0-20200921-1356-OFFICIAL.zip&ali_redirect_domain=static.cowtransfer.com&ali_redirect_ex_hot=100
+  ROM_NAME: pep
   TZ: Asia/Shanghai
 
 jobs:
@@ -51,7 +51,7 @@ jobs:
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME -a
        
        - name: Zip GSI  
          run: |
@@ -61,7 +61,7 @@ jobs:
        - name: Upload GSI to BitSend
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit final/GSI.zip
+              ./transfer wet final/GSI.zip
 
          
             
